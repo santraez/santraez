@@ -4,6 +4,8 @@ I'm from Ilo 🚢, a small port town in southern Perú 🇵🇪, and I share my 
 
 I've worked solo, developing web applications from the ground up 🌱, and as part of development teams for innovative companies in different industries 💻. When I'm not working, I enjoy creating useful and unique apps that are free for everyone 🛠️. I'm also a huge animal lover and support efforts to prevent animal abandonment in my community 🐾.
 
-**Resume:** [https://santraez.com](https://santraez.com)
-
 **Email:** [santraez@gmail.com](mailto:santraez@gmail.com)
+
+**Resume:** [santraez.com](https://santraez.com)
+
+**LinkedIn:** [in/santraez](https://www.linkedin.com/in/santraez)
