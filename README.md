@@ -8,6 +8,8 @@ I've worked solo, developing web applications from the ground up 🌱, and as pa
 
 **✦ Portfolio:** [santraez.com](https://santraez.com)
 
-**✦ Resume (CV):** [santraez.com](https://resume.sz.codes/santraez)
+**✦ Projects:** [codes.santraez.com](https://codes.santraez.com)
+
+**✦ Resume (cv):** [resume.sz.codes/santraez](https://resume.sz.codes/santraez)
 
 **✦ LinkedIn:** [in/santraez](https://www.linkedin.com/in/santraez)
