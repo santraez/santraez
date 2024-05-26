@@ -10,6 +10,6 @@ I've worked solo, developing web applications from the ground up 🌱, and as pa
 
 **✦ Projects:** [codes.santraez.com](https://codes.santraez.com)
 
-**✦ Resume (cv):** [resume.sz.codes/santraez](https://resume.sz.codes/santraez)
+**✦ Resume (CV):** [resume.sz.codes/santraez](https://resume.sz.codes/santraez)
 
 **✦ LinkedIn:** [in/santraez](https://www.linkedin.com/in/santraez)
