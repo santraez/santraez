@@ -1,0 +1,25 @@
+---
+import MainLayout from '@/layouts/main-layout.astro'
+import { Counter } from '@/components/counter'
+import { FavoritePokemon } from '@/components/favorite-pokemon'
+---
+
+<MainLayout title='Favorites'>
+  <h1>Favorites</h1>
+
+  <video controls muted autoplay transition:persist>
+    <source
+      src="https://ia804502.us.archive.org/33/items/GoldenGa1939_3/GoldenGa1939_3_512kb.mp4"
+      type="video/mp4"
+    />
+  </video>
+
+  <Counter
+    client:visible
+    transition:persist='count'
+    transition:persist-props
+    initialCount={30}
+  />
+
+  <FavoritePokemon client:only='preact' />
+</MainLayout>
