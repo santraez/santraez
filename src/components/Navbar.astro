@@ -1,6 +1,35 @@
-<nav class='m-auto text-center my-7 space-x-5'>
-  <a href='/' class='px-3'>Home</a>
-  <a href='/pokemon' class='bg-yellow-300 text-black px-3'>Pokemon</a>
-  <a href='/about' class='px-3'>About</a>
-  <a href='/contact' class='px-3'>Contact</a>
+---
+const links = [
+  { href: '/', label: 'home' },
+  { href: '/pokemon', label: 'pokemon' },
+  { href: '/pokemon/1', label: 'pages' },
+  { href: '/favorites', label: 'favorites' },
+  { href: '/about', label: 'about' },
+  { href: '/contact', label: 'contact' }
+]
+
+const { pathname } = Astro.url
+---
+
+<nav class='bg-slate-900'>
+  <div class='container flex items-center justify-center p-6 mx-auto capitalize'>
+    {links.map(link => (
+      <div>
+        <a href={link.href} class='text-gray-200 mx-6'>
+          {link.label}
+        </a>
+
+        <div
+          transition:name='fade-link'
+          class:list={[
+            'border-b-2',
+            {
+              'border-b-2 border-blue-500': pathname === link.href,
+              'border-transparent': pathname !== link.href
+            }
+          ]}
+        ></div>
+      </div>
+    ))}
+  </div>
 </nav>
