@@ -1,5 +1,6 @@
 ---
 import type { GetStaticPaths } from 'astro'
+import { Icon } from 'astro-icon/components'
 
 import MainLayout from '@/layouts/MainLayout.astro'
 import PokemonCard from '@/components/PokemonCard.astro'
@@ -41,6 +42,16 @@ const imageSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprit
       <h1 class='text-5xl capitalize'>#{id} {name}</h1>
     </div>
 
+    <button
+      id='favorite-button'
+      class='mt-5'
+      data-id={id}
+      data-name={name}
+    >
+      <Icon class='hidden' name='heart' size={50} data-heart />
+      <Icon name='heart-outline' size={50} data-heart-outline />
+    </button>
+
     <PokemonCard name={name} url={url} isBig/>
     
     <audio controls class='mt-5'>
@@ -48,3 +59,46 @@ const imageSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprit
     </audio>
   </section>
 </MainLayout>
+
+<script>
+  interface FavoritePokemon {
+    id: number
+    name: string
+  }
+
+  document.addEventListener('astro:page-load', () => {
+    let favoritePokemons: FavoritePokemon[] = JSON.parse(localStorage.getItem('favorites') ?? '[]')
+
+    const favoriteButton = document.getElementById('favorite-button') as HTMLButtonElement
+
+    if (!favoriteButton) return
+
+    const id = favoriteButton.dataset.id
+    const name = favoriteButton.dataset.name
+
+    if (!id || !name) return
+
+    const heartIcon = favoriteButton.querySelector('[data-heart]') as HTMLElement
+    const heartOutlineIcon = favoriteButton.querySelector('[data-heart-outline]') as HTMLElement
+
+    const isFavorite = favoritePokemons.some(pokemon => pokemon.name === name)
+
+    if (isFavorite) {
+      heartIcon.classList.toggle('hidden')
+      heartOutlineIcon.classList.toggle('hidden')
+    }
+
+    favoriteButton.addEventListener('click', () => {
+      heartIcon.classList.toggle('hidden')
+      heartOutlineIcon.classList.toggle('hidden')
+
+      if (isFavorite) {
+        favoritePokemons = favoritePokemons.filter(pokemon => pokemon.id !== +id)
+      } else {
+        favoritePokemons.push({ id: +id, name })
+      }
+
+      localStorage.setItem('favorites', JSON.stringify(favoritePokemons))
+    })
+  })
+</script>
